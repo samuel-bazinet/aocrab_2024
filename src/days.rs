@@ -11,4 +11,5 @@ mod day9;
 
 pub fn run_days() {
     day1::run_day();
+    day2::run_day();
 }

@@ -36,9 +36,18 @@ fn part_1(input: &Input) -> i32 {
 fn part_2(input: &Input) -> i32 {
     let left = input.0.clone();
     let right = input.1.clone();
-    left.iter().map(|x| {
-        (x, right.iter().filter(move |y| x == *y).collect::<Vec<_>>().len())
-    }).fold(0, |r, i| r + (i.0*i.1 as i32))
+    left.iter()
+        .map(|x| {
+            (
+                x,
+                right
+                    .iter()
+                    .filter(move |y| x == *y)
+                    .collect::<Vec<_>>()
+                    .len(),
+            )
+        })
+        .fold(0, |r, i| r + (i.0 * i.1 as i32))
 }
 
 #[cfg(test)]
