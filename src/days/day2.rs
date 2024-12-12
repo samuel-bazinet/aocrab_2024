@@ -17,9 +17,9 @@ fn process_input(input: &str) -> Input {
 }
 
 fn part_1(input: &Input) -> i32 {
-    input.iter().fold(0, |r, i| {
-        if detect_valid(i) {r+1} else {r}
-    })
+    input
+        .iter()
+        .fold(0, |r, i| if detect_valid(i) { r + 1 } else { r })
 }
 
 fn part_2(input: &mut Input) -> i32 {
@@ -27,8 +27,8 @@ fn part_2(input: &mut Input) -> i32 {
         for i in 0..list.len() {
             let out = list.remove(i);
             if detect_valid(list) {
-                return r+1;
-            } 
+                return r + 1;
+            }
             list.insert(i, out);
         }
         r

@@ -31,9 +31,8 @@ mod tests {
         let input = process_input("practice/day.txt");
         let result = part_1(&input);
         assert_eq!(
-            expected, result,
-            "{} is not the right answer, expected {}",
-            result, expected
+            result, expected,
+            "{result} is not the right answer, expected {expected}"
         );
     }
 
@@ -43,9 +42,8 @@ mod tests {
         let input = process_input("practice/day.txt");
         let result = part_2(&input);
         assert_eq!(
-            expected, result,
-            "{} is not the right answer, expected {}",
-            result, expected
+            result, expected,
+            "{result} is not the right answer, expected {expected}"
         );
     }
 }
